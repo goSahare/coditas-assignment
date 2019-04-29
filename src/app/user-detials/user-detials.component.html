@@ -1,0 +1,28 @@
+<div class="user-details" *ngIf="sortedUsers">
+		<span class="user-total">Total Results : {{sortedUsers.length}}</span>
+		<div *ngFor="let user of sortedUsers  | sort ; 
+			 		 let i = index;">
+		 	<div class="users-info" >
+				<img [src]="user.value.avatar_url" class="avatar" />
+				<div>
+					<h3 class="user-name">{{user.value.login | titlecase}}</h3>
+					<span>Profile Url : {{user.value.html_url}} </span>
+				</div>
+				<button class="detial-button" 
+					(click)="(user.open = !user.open) && showRepos(user.value.login)">
+					{{ user.open ? 'Collapse' : 'Details'}}
+				</button>
+			</div>
+			<div class="collapsable"
+				 [ngClass]="!user.open  ? 'open' : 'close'" 
+				 *ngFor="let repo of userRepo">
+				<span>{{repo.full_name.split('/')[1]}} </span>
+				<span>{{repo.language || 'Language not found'}}</span>
+				<br/>
+				<span>Open issues : {{repo.open_issues_count}}</span>
+				<span> Stars gained : {{repo.stargazers_count}}</span>
+				<span> Watchers : {{repo.watchers}}</span>
+				<span> Repo forked :{{repo.forks_count}}</span>
+			</div>
+		</div>
+</div>

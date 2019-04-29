@@ -1,0 +1,16 @@
+<div>
+	<mat-toolbar color="primary" class="home-bar">
+		<mat-form-field>
+			<mat-label>Sort By {{sortMethod}}</mat-label>
+				<mat-select class="sort-select">
+					<mat-option *ngFor="let sort of sortByCategory" [value]="sort" 
+						(click)="sortMethod = sort" class="sort-options">
+					  {{sort}}
+					</mat-option>
+				</mat-select>
+		</mat-form-field>
+		<input matInput placeholder="Search here" value="" #search class="searchInput" 
+			(keyup)="searchUser(search.value)">  
+	</mat-toolbar>
+</div>
+<user-detials *ngIf="userData" [sortedUsers]="userData" [sortMethodType]="sortMethod"></user-detials>

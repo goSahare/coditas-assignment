@@ -1,0 +1,62 @@
+.user-details{
+	padding: 0 12%;
+	height: auto;
+	min-height: 90%;
+	background-color:#e2dede;
+
+	.user-total{
+
+	}
+
+	.users-info{
+		display: flex;
+		background-color: #fff;
+		margin-bottom: 2%;
+		border:1px solid darkgray;
+		padding:2%;
+
+		.avatar{
+			vertical-align: middle;
+			width: 75px;
+			height: 75px;
+		    margin-right: 15px;
+			border-radius: 50%;
+		}
+
+		> * {
+			font-size: 14px;
+		}
+
+		.user-name{
+			margin-top: 0;
+		}
+
+		.detial-button{
+			color:#20a6d2;
+			width: 15%;
+			border:1px solid #20a6d2;
+			margin-left: auto;
+			margin-top: auto;
+		}
+	}
+
+	.collapsable{
+		padding: 0 15.8vw;
+		margin-top: -2%;
+		margin-bottom: 2%;
+		background-color: #f1f1f1;
+	}
+
+	.collapsable:nth-of-type(2n){
+		background-color:white;
+	}
+
+	
+
+	.open{
+		display: none;
+	}
+	.close{
+		display: block;
+	}
+}

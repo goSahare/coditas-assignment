@@ -1,0 +1,17 @@
+.home-bar{
+	padding:5% 12%;
+
+	display: flex;
+	justify-content: space-between;
+
+	.sort-select {
+		font-size: 14px !important;
+		.sort-options{
+			
+		}
+	}
+
+	.searchInput{
+		width: 30%;
+	}
+}

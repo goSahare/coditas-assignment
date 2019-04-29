@@ -1,15 +1,15 @@
 <div class="user-details" *ngIf="sortedUsers">
 		<span class="user-total">Total Results : {{sortedUsers.length}}</span>
-		<div *ngFor="let user of sortedUsers  | sort ; 
+		<div *ngFor="let user of sortedUsers | sort : sortMethodType; 
 			 		 let i = index;">
 		 	<div class="users-info" >
-				<img [src]="user.value.avatar_url" class="avatar" />
+				<img [src]="user.avatar_url" class="avatar" />
 				<div>
-					<h3 class="user-name">{{user.value.login | titlecase}}</h3>
-					<span>Profile Url : {{user.value.html_url}} </span>
+					<h3 class="user-name">{{user.login | titlecase}}</h3>
+					<span>Profile Url : {{user.html_url}} </span>
 				</div>
 				<button class="detial-button" 
-					(click)="(user.open = !user.open) && showRepos(user.value.login)">
+					(click)="(user.open = !user.open) && showRepos(user.login)">
 					{{ user.open ? 'Collapse' : 'Details'}}
 				</button>
 			</div>
